@@ -1,24 +1,21 @@
 #include<iostream.h>
-#include<iomanip.h>
+#include<string.h>
 void main()
 {
-int a[10];
-int i,t,*p,*q;
-cout<<"请输入10个数:";
-for(i=0;i<10;i++)
-cin>>a[i];
+int n,*p,*q;
+char a[100];
+char b[100];
+cout<<"输入要插入的位置为n处";
+cin>>n;
 p=a;
-q=&a[9];
-while(p<q)
+q=b;
+if(strlen(a)>=n)
 {
-t=*p;
+p+=n-1;
+for(q=0;*q!='\0';p++,q++)
+{
 *p=*q;
-*q=t;
-p++;
-q--;
 }
-cout<<"反序输出为:";
-for(i=0;i<10;i++)
-cout<<setw(3)<<a[i];
-cout<<endl;
+}
+cout<<"string a:"<<a<<endl；
 }
